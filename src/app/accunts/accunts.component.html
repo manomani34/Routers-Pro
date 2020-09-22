@@ -1,1 +1,10 @@
-<p>accunts works!</p>
+<ul>
+    <li *ngFor='let u of users'>
+        <a [routerLink]="['/accunts' , u.id , 'edit']" 
+        [queryParams]='{allowEdit: 1 , key2: true}'
+        fragment='paragraph1'> 
+            {{ u.name }}
+        </a>
+    </li>
+    <button (click)='onclick(1)'>Edit Account</button>
+</ul>

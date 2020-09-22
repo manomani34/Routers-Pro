@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IUser } from '../user';
 
 @Component({
   selector: 'app-accunts',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccuntsComponent implements OnInit {
 
-  constructor() { }
+  users: IUser [] = [
+    
+    {id: 1, name: 'ali'},
+    {id: 2, name: 'reza'},
+    {id: 3, name: 'mahdi'}      
+    
+  ]
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  onclick(id: number){
+
   }
 
 }
