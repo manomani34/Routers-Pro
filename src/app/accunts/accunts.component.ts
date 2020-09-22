@@ -21,7 +21,7 @@ export class AccuntsComponent implements OnInit {
   ngOnInit(): void {
   }
   onclick(id: number){
-
+    this.router.navigate(['/accunts' , id , 'edit'] , {queryParams: {allowEdit:1} , fragment:'paragraph1'})
   }
 
 }

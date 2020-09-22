@@ -1,3 +1,10 @@
-<p>users works!</p>
-<button (click)="onClick()" class="btn btn-danger">Go to Accounts</button>
-<app-edit-user></app-edit-user>
+<ul>
+    <li *ngFor='let user of users'>
+<a [routerLink]="['/users' , user.id]" >
+    {{user.name}}
+</a>
+    </li>
+</ul>
+<hr>
+<!-- <button (click)="onClick()" class="btn btn-danger">Go to Accounts</button>
+<app-edit-user></app-edit-user> -->
