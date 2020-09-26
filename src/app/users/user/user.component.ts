@@ -43,7 +43,7 @@ export class UserComponent implements OnInit, OnDestroy {
 
 
   editUser(){
-    this.router.navigate(['edit'] , {relativeTo: this.route});
+    this.router.navigate(['edit'] , {relativeTo: this.route , queryParamsHandling: 'preserve'});
   }
 
   ngOnDestroy(){
