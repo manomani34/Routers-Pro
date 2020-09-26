@@ -11,6 +11,7 @@ import { UserService } from './user.service.service';
 export class UsersComponent implements OnInit {
 
   users: IUser[] =[{id: 0 , name: ''}];
+  
   constructor(private router: Router ,
      private route:ActivatedRoute,
      private userService:UserService) { }

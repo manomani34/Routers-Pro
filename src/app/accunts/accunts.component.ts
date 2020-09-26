@@ -15,13 +15,13 @@ export class AccuntsComponent implements OnInit {
     {id: 2, name: 'reza'},
     {id: 3, name: 'mahdi'}      
     
-  ]
+  ];
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   onclick(id: number){
-    this.router.navigate(['/accunts' , id , 'edit'] , {queryParams: {allowEdit:1} , fragment:'paragraph1'})
+    this.router.navigate(['/accounts' , id , 'edit'] , {queryParams: {allowEdit:1} , fragment:'paragraph1'})
   }
 
 }

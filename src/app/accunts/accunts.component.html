@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor='let u of users'>
-        <a [routerLink]="['/accunts' , u.id , 'edit']" 
+        <a [routerLink]="['/accounts' , u.id , 'edit']" 
         [queryParams]='{allowEdit: 1 , key2: true}'
         fragment='paragraph1'> 
             {{ u.name }}
