@@ -12,10 +12,10 @@ export class AppComponent implements OnInit {
 
   title = 'Routers-Pro';
   // sample of routing
-  ngOnInit(){
-    setTimeout(() => {
-      this.router.navigate(["/users"]);
-    }, 5000);
+   ngOnInit(){
+  //   setTimeout(() => {
+  //     this.router.navigate(["/users"]);
+  //   }, 5000);
   }
   
 }

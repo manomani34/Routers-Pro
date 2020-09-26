@@ -1,5 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink, RouterPreloader } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IUser } from '../../user'
 import { UserService } from '../user.service.service';
@@ -19,6 +20,7 @@ export class UserComponent implements OnInit, OnDestroy {
   user: IUser;
 
   constructor(private route: ActivatedRoute,
+    private router: Router,
     private userService: UserService) { }
 
   ngOnInit(): void {
@@ -31,13 +33,23 @@ export class UserComponent implements OnInit, OnDestroy {
     //    }
     //  );    
     //'+' convert string to number!
-    this.users = this.userService.getUsers();
-   this.user = this.userService.getUser(+this.route.snapshot.params['id']);
+    this.usersubscription = this.route.params.subscribe(
+      (params: Params) => {
+        this.user = this.userService.getUser(+params['id'])
+      });
+    //  this.user = this.userService.getUser(+this.route.snapshot.params['id']);
     
   }
 
-  ngOnDestroy(){
-    // this.usersubscription.unsubscribe();
+
+  editUser(){
+    this.router.navigate(['edit'] , {relativeTo: this.route});
   }
+
+  ngOnDestroy(){
+    this.usersubscription.unsubscribe();
+  }
+
+ 
 
 }

@@ -1,11 +1,11 @@
 <ul>
     <li *ngFor='let user of users'>
-<a [routerLink]="['/users' , user.id]" >
+<a [routerLink]="['/users' , user.id]" [queryParams]="{allowEdit: user.id === 2 ? 1 : 0}">
     {{user.name}}
 </a>
     </li>
 </ul>
 <router-outlet></router-outlet>
 <hr>
-<button (click)="onClick()" class="btn btn-danger">Go to Accounts</button>
-<app-edit-user></app-edit-user> -->
+<!-- <button (click)="onClick()" class="btn btn-danger">Go to Accounts</button>
+<app-edit-user></app-edit-user>  -->
