@@ -15,22 +15,28 @@ import { UserService } from '../user.service.service';
 
 export class UserComponent implements OnInit, OnDestroy {
   usersubscription: Subscription;
-  user: IUser;
+  user: IUser = {id: 0 , name:''};
 
   constructor(private route: ActivatedRoute,
     private userService: UserService) { }
 
   ngOnInit(): void {
-    // this.user.id = this.route.snapshot.params['id'];
-    // this.user.name = this.route.snapshot.params['name'];
-    // this.usersubscription= this.route.params.subscribe(
-    //   (params: Params) => {
-    //     this.user.id = params['id'];
-    //     this.user.name = params['name'];
-    //   }
-    // );    
+     this.user.id = this.route.snapshot.params['id'];
+     this.user.name = this.route.snapshot.params['name'];
+     this.usersubscription= this.route.params.subscribe(
+       (params: Params) => {
+        this.user.id = params['id'];
+        this.user.name = params['name'];
+       }
+     );    
     //'+' convert string to number!
-    this.user = this.userService.getUser(+this.route.snapshot.params['id']);
+    //this.user = this.userService.getUser(+this.route.snapshot.params['id']);
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.user =this.userService.getUser(+params['id']);
+      }
+      );
+    
   }
 
   ngOnDestroy(){

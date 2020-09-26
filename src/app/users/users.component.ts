@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
     this.users = this. userService.getUsers();
   }
   onClick(){
-    this.router.navigate(['/accounts'] , {relativeTo: this.route})
+    this.router.navigate(['/users'] , {relativeTo: this.route})
   }
 
 }

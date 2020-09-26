@@ -16,10 +16,11 @@ import { UserService } from './users/user.service.service';
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'users', component: UsersComponent},  
-  {path:'users/id:', component: UsersComponent},  
-  // {path:'users/:id/:name', component: UserComponent},
-  {path:'accounts', component: AccuntsComponent},
-  {path:'accounts/:id/edit', component: EditAccountComponent}
+  // {path:':id', component: UsersComponent},  
+  // {path:':id/edit', component: EditUserComponent},
+  // {path:':id/:name', component: UsersComponent},
+  {path:'accounts', component: AccuntsComponent}
+  // {path:'accounts/:id/edit', component: EditAccountComponent}
 ];
 @NgModule({
   declarations: [
