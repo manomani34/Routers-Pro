@@ -11,6 +11,7 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { UserComponent } from './users/user/user.component';
 import { EditAccountComponent } from './accunts/edit-account/edit-account.component';
 import { UserService } from './users/user.service.service';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -31,8 +32,10 @@ const routes: Routes = [
     UsersComponent,
     EditUserComponent,
     UserComponent
+    
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)

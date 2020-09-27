@@ -23,17 +23,19 @@ export class EditUserComponent implements OnInit, OnDestroy {
     private userService: UserService) { }
 
   ngOnInit() {
+    console.log("enter");
     this.userSubscription  = this.route.params.subscribe(
       (params: Params) => {
         this.user = this.userService.getUser(+params['id']);
       });
       this.route.queryParams.subscribe(
-        (queryParams: Params) =>{
+        (queryParams: Params) => {
           this.allowEdit = queryParams['allowEdit'] === '1' ? true : false;
         }
       );
       this.userId = this.user.id ;
       this.userName = this.user.name;
+      console.log(this.user.name); 
   }
 
   onSave(){
