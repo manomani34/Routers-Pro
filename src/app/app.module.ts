@@ -12,6 +12,8 @@ import { UserService } from './users/user.service.service';
 import { FormsModule } from '@angular/forms';
 import { LoginServiceService } from './login-service.service';
 import { AuthGuardService } from './auth-guard.service';
+import { CanDeactivateGuardService } from './can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -23,7 +25,8 @@ import { AuthGuardService } from './auth-guard.service';
     AccuntsComponent,
     UsersComponent,
     EditUserComponent,
-    UserComponent
+    UserComponent,
+    ErrorPageComponent
 
   ],
   imports: [
@@ -32,7 +35,7 @@ import { AuthGuardService } from './auth-guard.service';
     AppRoutingModule
   ],
   // provide services 
-  providers: [UserService, AuthGuardService, LoginServiceService],
+  providers: [UserService, AuthGuardService, LoginServiceService, CanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
